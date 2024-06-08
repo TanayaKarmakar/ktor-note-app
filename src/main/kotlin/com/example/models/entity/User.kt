@@ -1,7 +1,7 @@
 package com.example.models.entity
 
-import kotlinx.serialization.descriptors.PrimitiveKind
+import io.ktor.server.auth.*
 
 data class User(val email: String,
                 val name: String,
-                val hashPassword: String)
+                val hashPassword: String): Principal

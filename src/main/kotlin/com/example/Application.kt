@@ -1,7 +1,7 @@
 package com.example
 
+
 import com.example.authentication.JwtService
-import com.example.authentication.hashFunc
 import com.example.plugins.*
 import com.example.repository.DatabaseFactory
 import com.example.repository.Repository
@@ -13,10 +13,12 @@ fun main(args: Array<String>) {
 }
 
 fun Application.module() {
+    val jwtService = JwtService()
+    val db = Repository()
     DatabaseFactory.init()
     install(Locations)
     configureSerialization()
-    configureSecurity()
-    configureRouting()
+    configureSecurity(jwtService, db)
+    configureRouting(jwtService, db)
 
 }
