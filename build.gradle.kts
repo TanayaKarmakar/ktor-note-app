@@ -1,5 +1,6 @@
 
 val kotlin_version: String by project
+//var ktor_version: String by project
 val logback_version: String by project
 val exposed_version: String by project
 val pg_version:String by project
@@ -27,6 +28,7 @@ repositories {
 dependencies {
     implementation("io.ktor:ktor-server-content-negotiation-jvm")
     implementation("io.ktor:ktor-server-core-jvm")
+    implementation("io.ktor:ktor-server-locations")
     implementation("io.ktor:ktor-serialization-gson-jvm")
     implementation("io.ktor:ktor-server-auth-jvm")
     implementation("io.ktor:ktor-server-auth-jwt-jvm")
@@ -42,11 +44,4 @@ dependencies {
 
     testImplementation("io.ktor:ktor-server-tests-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
-
-
-//    implementation "org.jetbrains.exposed:exposed-core:0.35.1"
-//    implementation "org.jetbrains.exposed:exposed-dao:0.35.1"
-//    implementation "org.jetbrains.exposed:exposed-jdbc:0.35.1"
-//    implementation "org.postgresql:postgresql:42.2.2"
-//    implementation 'com.zaxxer:HikariCP:3.4.2'
 }

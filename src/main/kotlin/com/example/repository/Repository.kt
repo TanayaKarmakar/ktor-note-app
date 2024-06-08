@@ -7,7 +7,7 @@ import org.jetbrains.exposed.sql.ResultRow
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.select
 
-class UserRepository {
+class Repository {
     suspend fun addUser(user: User) =
         dbQuery{
             UserTable.insert { ut ->
